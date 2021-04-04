@@ -12,11 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 //routes
 app.get("/", async (req, res) => {
   try {
-    const todos = await pool.query(
+    const test = await pool.query(
       "SELECT * FROM test"
     );
 
-    res.json(todos.rows);
+    res.json(test.rows);
 
   } catch (error) {
     res.json(error.message);
